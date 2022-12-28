@@ -30,7 +30,7 @@ function App() {
   return (
     <div>
 
-      <BrowserRouter>
+      <BrowserRouter forceRefresh>
 
         <nav className="flex">
           <NavLink to="/" className="px-5 py-3 no-underline text-900 text-xl border-bottom-2 border-300 hover:border-500">Home</NavLink>

@@ -24,7 +24,7 @@ export default function FamiliaDetalle() {
         if (!esNuevo) {
             familiaService.buscarPorId(params.idFamilia).then(res => setFamilia(res.data));
         }
-    });
+    }, []);
 
 
     function onInputChange(e, name) {

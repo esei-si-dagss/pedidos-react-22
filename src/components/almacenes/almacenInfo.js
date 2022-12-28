@@ -24,7 +24,7 @@ export default function AlmacenInfo() {
         if (!esNuevo) {
             almacenService.buscarPorId(params.idAlmacen).then(res => setAlmacen(res.data));
         }
-    });
+    }, []); // Carga después del primer renderizado
 
 
     function onInputChange(e, name) {

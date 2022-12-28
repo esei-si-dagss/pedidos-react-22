@@ -55,3 +55,16 @@ Arranca servidor de desarrollo en (http://localhost:3000)
 ## Aspectos a revisar
 * Gestión de `artículos` (ejemplo de manejo de relación 1:N con `familia`)
 * Gestión de `almacenes` (ejemplo de manejo de relaciones N:M con atributos y reutilización de componentes)
+
+### Correcciones (28/12/2022)
+
+1. Actualización de versiones en  `package.json`
+   * Requiere hacer `npm install` para forzar la recarga de los nuevos módulos
+
+2. Ajuste de `index.js` para actualizar el renderizado inicial del React 18.x (ver (https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html#updates-to-client-rendering-apis))
+
+3. Añadido parámetro `forceRefresh` en componente `BrowserRouter` de `App.js` para forzar a repintar las vistas al "navegar" entre URIs en el cliente.
+
+4. Añadida la dependencia `[]` en los _hooks_ `useEffect(...)` de los componente `almacenInfo`, `articuloDetalle`, `clienteDetalle` y `familiaDetalle` para que sólo se cargen los datos de la entidad tras el primer renderizado y permitir la edición de entidades (en la versión inicial del proyecto no era posible ya que se recargaba la vista con el valor inicial de la entidad tras cada modificación)
+
+**Nota:** En la mayor parte de las entidades la acción de borrado falla y no se realiza el borrado realmente, debido a las restricciones de claves foráneas.
