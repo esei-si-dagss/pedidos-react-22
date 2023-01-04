@@ -56,7 +56,7 @@ export default function ArticuloListado(props) {
     }
 
     function borrarArticulo() {
-        articuloService.eliminar(articuloActual.id).catch((err) => {
+        articuloService.eliminar(articuloActual.id).catch((err) => { //Captura error en peticion HTTP
             alert("Error borrando entidad.\n"+err.message);
         });
         ocultarDialogoBorrado();

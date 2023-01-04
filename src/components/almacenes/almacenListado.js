@@ -54,7 +54,7 @@ export default function AlmacenListado(props) {
     }
 
     function borrarAlmacen() {
-        almacenService.eliminar(almacenActual.id).catch((err) => {
+        almacenService.eliminar(almacenActual.id).catch((err) => { //Captura error en peticion HTTP
             alert("Error borrando entidad.\n"+err.message);
         });
         ocultarDialogoBorrado();
