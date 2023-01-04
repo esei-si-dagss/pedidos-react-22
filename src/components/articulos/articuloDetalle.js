@@ -29,7 +29,7 @@ export default function ArticuloDetalle() {
             articuloService.buscarPorId(params.idArticulo).then(res => setArticulo(res.data));
         }
         familiaService.buscarTodas().then(res => setFamilias(res.data));
-    });
+    },[]); // Carga después del primer renderizado
 
 
     function onInputChange(e, name) {

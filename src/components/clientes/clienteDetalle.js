@@ -24,7 +24,7 @@ export default function ClienteDetalle() {
         if (!esNuevo) {
             clienteService.buscarPorDNI(params.dniCliente).then(res => setCliente(res.data));
         }
-    },[]);
+    },[]); // Carga después del primer renderizado
 
 
     function onInputChange(e, name) {

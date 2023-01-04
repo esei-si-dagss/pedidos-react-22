@@ -45,7 +45,9 @@ export default function ClienteListado(props) {
     }
 
     function borrarCliente() {
-        clienteService.eliminar(clienteActual.dni);
+        clienteService.eliminar(clienteActual.dni).catch((err) => {
+            alert("Error borrando entidad.\n"+err.message);
+        });
         ocultarDialogoBorrado();
     }
 

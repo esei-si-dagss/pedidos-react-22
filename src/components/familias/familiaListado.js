@@ -48,7 +48,9 @@ export default function FamiliaListado(props) {
     }
 
     function borrarFamilia() {
-        familiaService.eliminar(familiaActual.id);
+        familiaService.eliminar(familiaActual.id).catch((err) => {
+            alert("Error borrando entidad.\n"+err.message);
+        });
         ocultarDialogoBorrado();
     }
 
